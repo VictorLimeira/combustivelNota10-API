@@ -31,6 +31,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->group(['prefix' => 'auth'], function () use ($router) {
         // Matches "/api/register
         $router->post('/register', 'AuthController@register');
+        // Matches "/api/login
+        $router->post('/login', 'AuthController@login');
     });
 
 });
