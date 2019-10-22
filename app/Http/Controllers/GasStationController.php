@@ -65,7 +65,7 @@ class GasStationController extends Controller
 
     public function destroy($id)
     {
-        $gasStation = GasStation::find($id);
+        $gasStation = GasStation::findOrFail($id);
         $gasStation->delete();
         return response()->json('Gas station removed successfully');
     }
