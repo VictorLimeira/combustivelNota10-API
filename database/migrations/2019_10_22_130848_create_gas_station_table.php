@@ -33,7 +33,7 @@ class CreateGasStationTable extends Migration
             $table->boolean('additive_gasoline');
             $table->boolean('premium_gasoline');
             $table->boolean('s10_diesel_common');
-            $table->boolean('s1_diesel_additive');
+            $table->boolean('s10_diesel_additive');
             $table->boolean('s500_diesel_common');
             $table->boolean('s500_diesel_additive');
             $table->timestamps();

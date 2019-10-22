@@ -27,7 +27,7 @@ class GasStationController extends Controller
         'additive_gasoline' => 'required',
         'premium_gasoline' => 'required',
         's10_diesel_common' => 'required',
-        's1_diesel_additive' => 'required',
+        's10_diesel_additive' => 'required',
         's500_diesel_common' => 'required',
         's500_diesel_additive' => 'required',
     ];

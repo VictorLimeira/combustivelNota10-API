@@ -37,7 +37,7 @@ class GasStation extends Model
         'additive_gasoline',
         'premium_gasoline',
         's10_diesel_common',
-        's1_diesel_additive',
+        's10_diesel_additive',
         's500_diesel_common',
         's500_diesel_additive',
     ];
