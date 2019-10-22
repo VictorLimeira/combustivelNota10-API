@@ -18,7 +18,29 @@ class GasStation extends Model
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'gas_ctation_cod',
+        'gas_station_name',
+        'longitude',
+        'latitude',
+        'city',
+        'state',
+        'show_in_app',
+        'last_visit_date',
+        'store',
+        'oil_change',
+        'washing',
+        'rubber_repair',
+        'common_ethanol',
+        'additive_ethanol',
+        'common_gasoline',
+        'additive_gasoline',
+        'premium_gasoline',
+        's10_diesel_common',
+        's1_diesel_additive',
+        's500_diesel_common',
+        's500_diesel_additive',
+    ];
 
     /**
      * The attributes excluded from the model's JSON form.
