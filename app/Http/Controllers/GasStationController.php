@@ -9,12 +9,19 @@ use Illuminate\Http\Request;
 class GasStationController extends Controller
 {
 
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function index()
     {
         $gasStations = GasStation::all();
         return response()->json($gasStations);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function create(Request $request)
     {
         $gasStation = GasStation::create($request->all());
@@ -23,16 +30,19 @@ class GasStationController extends Controller
     }
 
     /**
-     * Retrieve the user for the given ID.
-     *
-     * @param  int  $id
-     * @return Response
+     * @param $id
+     * @return mixed
      */
     public function show($id)
     {
         return GasStation::findOrFail($id);
     }
 
+    /**
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function update(Request $request, $id)
     {
         $gasStation= GasStation::findOrFail($id);
@@ -63,6 +73,10 @@ class GasStationController extends Controller
         return response()->json($gasStation);
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function destroy($id)
     {
         $gasStation = GasStation::findOrFail($id);
