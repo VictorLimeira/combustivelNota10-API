@@ -15,7 +15,7 @@ class CreateGasStationTable extends Migration
     {
         Schema::create('gas_station', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->char('gas_ctation_cod', 8);
+            $table->char('gas_station_cod', 8);
             $table->char('gas_station_name', 40);
             $table->float('longitude', 10, 6);
             $table->float('latitude', 10, 6);

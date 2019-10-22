@@ -19,7 +19,7 @@ class GasStation extends Model
      * @var array
      */
     protected $fillable = [
-        'gas_ctation_cod',
+        'gas_station_cod',
         'gas_station_name',
         'longitude',
         'latitude',

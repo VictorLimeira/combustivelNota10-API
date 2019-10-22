@@ -8,6 +8,29 @@ use Illuminate\Http\Request;
 
 class GasStationController extends Controller
 {
+    private $gas_station_rules = [
+        'gas_station_cod' => 'required',
+        'gas_station_name' => 'required',
+        'longitude' => 'required',
+        'latitude' => 'required',
+        'city' => 'required',
+        'state' => 'required',
+        'show_in_app' => 'required',
+        'last_visit_date' => 'required',
+        'store' => 'required',
+        'oil_change' => 'required',
+        'washing' => 'required',
+        'rubber_repair' => 'required',
+        'common_ethanol' => 'required',
+        'additive_ethanol' => 'required',
+        'common_gasoline' => 'required',
+        'additive_gasoline' => 'required',
+        'premium_gasoline' => 'required',
+        's10_diesel_common' => 'required',
+        's1_diesel_additive' => 'required',
+        's500_diesel_common' => 'required',
+        's500_diesel_additive' => 'required',
+    ];
 
     /**
      * @return \Illuminate\Http\JsonResponse
@@ -21,9 +44,11 @@ class GasStationController extends Controller
     /**
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function create(Request $request)
     {
+        $this->validate($request, $this->gas_station_rules);
         $gasStation = GasStation::create($request->all());
 
         return response()->json($gasStation);
@@ -42,12 +67,14 @@ class GasStationController extends Controller
      * @param Request $request
      * @param $id
      * @return \Illuminate\Http\JsonResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, $this->gas_station_rules);
         $gasStation= GasStation::findOrFail($id);
 
-        $gasStation->gas_ctation_cod = $request->input('gas_ctation_cod');
+        $gasStation->gas_station_cod = $request->input('gas_station_cod');
         $gasStation->gas_station_name = $request->input('gas_station_name');
         $gasStation->longitude = $request->input('longitude');
         $gasStation->latitude = $request->input('latitude');
