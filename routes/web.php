@@ -15,4 +15,8 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('gas-station/{id}', 'GasStationController@show');
+$router->get('/gas-station', 'GasStationController@index');
+$router->post('/gas-station', 'GasStationController@create');
+$router->get('/gas-station/{id}', 'GasStationController@show');
+$router->put('/gas-station/{id}', 'GasStationController@update');
+$router->delete('/gas-station/{id}', 'GasStationController@destroy');
